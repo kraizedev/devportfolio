@@ -1,0 +1,3 @@
+# Public crawl rules. Do NOT list private paths here: this file is public.
+User-agent: *
+Allow: /

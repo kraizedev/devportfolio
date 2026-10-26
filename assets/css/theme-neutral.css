@@ -1,0 +1,44 @@
+/* =========================================================================
+   THEME FILE: the only file to swap for a restyle.
+   Current: "Neutral draft" (no look picked yet).
+   Candidate looks (see WEBSITE-RESEARCH.md §4), each would be a new file:
+     theme-golden-hour.css  (A)  · theme-freeze-frame.css (B) · theme-sari-sari.css (C)
+   To restyle: copy this file, change tokens (and add theme-only rules
+   at the bottom), then point the <link id="theme-css"> in each page at it.
+   Fonts: self-host WOFF2 files in /assets/fonts/ and add @font-face here;
+   don't load from external CDNs.
+   ========================================================================= */
+:root{
+  /* color */
+  --c-bg:#f7f5f1;
+  --c-surface:#ffffff;
+  --c-ink:#1d1d1f;
+  --c-muted:#6b6862;
+  --c-line:#dedad2;
+  --c-accent:#2f5d50;
+  --c-accent-ink:#ffffff;
+  --c-warn:#8a5a00;
+  --c-warn-bg:#fff4dc;
+  --c-warn-line:#f0d9a6;
+  --c-slate-bg:#111111;
+  --c-slate-ink:#eeeeee;
+  --c-media-a:#ece8e0;
+  --c-media-b:#e5e1d8;
+  --c-media-line:#bdb7ab;
+  --c-scrim:rgba(0,0,0,.45);
+
+  /* type */
+  --f-display:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --f-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --f-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --fs-hero:clamp(1.7rem,4.5vw,2.6rem);
+  --fw-display:700;
+  --lh-body:1.55;
+
+  /* shape + motion */
+  --radius:12px;
+  --radius-sm:8px;
+  --maxw:960px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --dur:400ms;
+}
