@@ -10,7 +10,9 @@ The site is a static front end plus a small Node.js back end. The back end store
 
 - `public/` — the site (pages, CSS, JavaScript, fonts, images)
 - `server.js` — Express server
+- `scripts/build-pages.js` — builds the static GitHub Pages copy in `_site/`
 - `test/contact.test.js` — API tests
+- `test/pages.test.js` — Pages build test
 - `data/` — SQLite database, created on first save and git-ignored
 - `.env.example` — environment variable names and sample values
 
@@ -87,4 +89,12 @@ See `.env.example`. Copy it to `.env`. Do not commit `.env`.
 
 GitHub Pages cannot run this back end. Pages only serves static files, so `POST /api/contact` would not work there.
 
-Hosting is not decided yet. This repository does not enable GitHub Pages, set a custom domain, or deploy anywhere.
+The production host is not decided yet. This repository does not enable GitHub Pages or set a custom domain.
+
+## GitHub Pages preview
+
+Pushes to `main` run `.github/workflows/pages.yml`. The workflow publishes a static copy of `public/`, built by `scripts/build-pages.js` into `_site/`. That copy is what GitHub Pages serves. `public/` itself is unchanged.
+
+The contact form and the back end are not available on the preview. Pages cannot run `server.js`, so the build removes the form and its script. The mailto fallback stays on the page and still says `EMAIL_PENDING`.
+
+The live URL will be https://kraizedev.github.io/devportfolio/ once Pages is enabled in the repository settings with the source set to GitHub Actions.

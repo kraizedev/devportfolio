@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node --env-file-if-exists=.env server.js",
     "dev": "node --watch --env-file-if-exists=.env server.js",
-    "test": "node --test"
+    "test": "node --test test/contact.test.js test/pages.test.js"
   },
   "dependencies": {
     "express": "^4.21.2",
