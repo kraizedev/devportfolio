@@ -136,3 +136,20 @@ h3{font-size:1.1rem;margin:0 0 6px}
 
 @media (max-width:900px){.process-strip{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:560px){.process-strip{grid-template-columns:repeat(2,1fr)}}
+
+/* contact form (uses theme tokens; no extra motion) */
+.contact-form{max-width:36rem;margin:8px 0 0}
+.contact-field{margin:0 0 14px}
+.contact-field label{display:block;margin:0 0 6px;font-size:.9rem;color:var(--c-ink)}
+.contact-field input,.contact-field textarea{display:block;width:100%;margin:0;padding:12px 14px;font:inherit;line-height:1.45;color:var(--c-ink);background:var(--c-surface);border:1px solid var(--c-muted);border-radius:var(--radius-sm)}
+.contact-field textarea{min-height:140px;resize:vertical}
+.contact-field input:-webkit-autofill,.contact-field textarea:-webkit-autofill{-webkit-text-fill-color:var(--c-ink);caret-color:var(--c-ink);box-shadow:0 0 0 1000px var(--c-surface) inset}
+.contact-status{min-height:1.5em;margin:4px 0 0;font-size:.95rem}
+.contact-status.is-error{color:var(--c-warn)}
+.contact-status.is-success{color:var(--c-accent)}
+.contact-fallback{margin:16px 0 0;font-size:.95rem}
+.contact-form .visually-hidden input{width:1px;height:1px;padding:0;border:0;margin:0;pointer-events:none}
+.contact-form .btn[aria-disabled="true"]{opacity:.65;cursor:not-allowed}
+@media (prefers-reduced-motion:reduce){
+  .contact-form .btn,.contact-field input,.contact-field textarea{transition:none}
+}

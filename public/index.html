@@ -227,7 +227,30 @@ GLOBAL style
     <p class="scene" aria-hidden="true">SC-06</p>
     <h2 class="section-title" id="contact-title">Want an ad like this for your product?</h2>
     <p class="contact-lines">Email: <span class="ph">[EMAIL]</span><br>Socials: <span class="ph">[HANDLES]</span><br>Rates / booking: <span class="ph">[LINK or "Email for rates"]</span></p>
-    <div class="cta-row"><a class="btn btn-primary" href="mailto:EMAIL_PENDING" data-magnetic>Work with me</a></div>
+    <form class="contact-form" id="contact-form" action="/api/contact" method="post" accept-charset="utf-8">
+      <div class="contact-field">
+        <label for="contact-name">Name</label>
+        <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="100">
+      </div>
+      <div class="contact-field">
+        <label for="contact-email">Email</label>
+        <input id="contact-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254">
+      </div>
+      <div class="contact-field">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" required maxlength="5000" rows="5"></textarea>
+      </div>
+      <div class="visually-hidden" aria-hidden="true">
+        <label for="contact-gotcha">Leave blank</label>
+        <input id="contact-gotcha" name="gotcha" type="text" tabindex="-1" autocomplete="off" autocapitalize="off" spellcheck="false" value="">
+      </div>
+      <div class="cta-row">
+        <button class="btn btn-primary" type="submit" data-magnetic>Work with me</button>
+      </div>
+      <p class="contact-status" id="contact-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    </form>
+    <p class="contact-fallback"><a href="mailto:EMAIL_PENDING">Work with me</a></p>
+    <script src="assets/js/contact.js" defer></script>
   </div></section>
 </main>
 
